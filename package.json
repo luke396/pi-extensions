@@ -1,0 +1,36 @@
+{
+  "name": "@luke396/pi-extensions",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pi extensions: transcript activity that stays open while it runs and folds once the answer arrives, plus readable local paths beside Markdown links.",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "pi-coding-agent"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luke396/pi-extensions.git"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/collapse-transcript/index.ts",
+      "./extensions/quiet-tui.ts",
+      "./extensions/visible-paths/index.ts",
+      "./node_modules/@luan.sh/pi-libtui/src/extension.ts"
+    ]
+  },
+  "dependencies": {
+    "@luan.sh/pi-libtui": "0.3.15",
+    "mdast-util-from-markdown": "2.0.3"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs extensions/visible-paths/test/*.test.ts"
+  }
+}
